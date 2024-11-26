@@ -1,0 +1,53 @@
+.review_content {
+  display: flex;
+  width: 1000px;
+  height: 250px;
+  padding: 14px;
+  margin-top: 10px;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.review_profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+  width: 90px;
+  border: solid;
+  border-color: transparent;
+  border-radius: 100%;
+  background-color: white;
+}
+
+.review_body {
+  display: flex;
+  width: 80%;
+  height: 200px;
+  padding: 14px;
+  flex-direction: column;
+  border: solid;
+  border-radius: 10px;
+  border-color: darkgray;
+  background-color: white;
+  align-items: space-between;
+}
+
+.review_body_top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.review_body_content {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  height: 170px;
+  font-size: 20px;
+}
+
+.review_footer {
+  justify-content: end;
+}

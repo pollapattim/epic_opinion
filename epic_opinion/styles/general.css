@@ -1,0 +1,198 @@
+* {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+body {
+    margin: 0;
+    padding-bottom: 500px;
+    background-color: rgb(58, 61, 70);
+}
+
+.main_box {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.box1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 500px;
+
+    
+}
+
+.item_center{
+    display: grid;
+    
+    width: 100%;
+    margin-top: 20px;
+    
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.login_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+   
+    
+    
+}
+
+.login_bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    border-width: 1px;
+    border-radius: 12px;
+    
+}
+.box_list_main {
+    margin-top: 77px;
+}
+
+.box_list {
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+    height: 150px;
+    width: 800px;
+    justify-content: space-between;
+    border-style: solid;
+    background-color: transparent;
+    
+}
+
+.box_list_section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+.box_list_left_section {
+    display: flex;
+    flex: 1;
+    
+    align-items: center;
+    justify-content: center;
+   
+    
+}
+
+.box_list_left_section_content {
+    display: flex;
+    flex: 1;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.box_list_middle_section {
+    display: flex;
+    height: 145px;
+    flex: 4;
+    background-color: white;
+    color: black;
+    border: solid;
+    overflow: hidden;
+    border-color: black;
+    overflow-y: scroll;
+    text-overflow: ellipsis;
+   
+    
+}
+
+.box_list_right_section {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+.text_btn {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    
+}
+
+.text_in_box {
+    color: white;
+    margin-left: 10px;
+    margin-top: 10px;
+    
+}
+
+.text_black {
+    color: black; 
+}
+
+.right_corner {
+    justify-content: end;
+}
+
+.admin_movie_option {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+
+.small_image {
+    height: 140px;
+    background-color: lightgray;
+    
+}
+
+.movie_list_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 90%;
+    width: 90%;
+}
+
+.logo {
+    height: 180px;
+}
+
+.logo_big {
+    height: 500px;
+    opacity: 60%;
+}
+
+.adim_top_page {
+    display: flex;
+    flex-direction: row;
+    margin-left: 40px;
+}
+
+.input .adim_top_page {
+    border: solid;
+    border-color: darkgray;
+    border-radius: 5px;
+    margin-left: 30px;
+}

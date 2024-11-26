@@ -1,0 +1,113 @@
+.btn {
+    font-size: 1em;
+    padding: 10px;
+    color: #fff;
+    border: 2px solid white;
+    background-color: transparent;
+    border-radius: 3px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+.btn_del {
+    font-size: 1em;
+    color: #fff;
+    border: 2px solid white;
+    background-color: transparent;
+    border-radius: 3px;
+    text-decoration: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.btn_del:hover {
+    background: rgba(205, 2, 2, 0.2);
+  }
+
+.admin_movie_options {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.admin_top_page {
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
+.admin_top_page_content {
+    margin-left: 30px;
+}
+
+.admin_col {
+    display: flex;
+    flex-direction: column;
+}
+.admin_movie_title {
+    color: white;
+    font-size: 40px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 5px solid white;
+}
+
+.user_body_content {
+    display: flex;
+    width: 60%;
+    height: 60px;
+    padding: 14px;
+    flex-direction: column;
+    border: solid;
+    border-radius: 10px;
+    border-color: darkgray;
+    background-color: white;
+    align-items: space-between;
+}
+
+.users_body {
+    display: flex;
+    width: 1000px;
+    height: 125px;
+    padding: 14px;
+    margin-top: 10px;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+.account_review_body {
+    
+        display: flex;
+        width: 70%;
+        height: 200px;
+        padding: 14px;
+        margin-right: 20px;
+        flex-direction: column;
+        border: solid;
+        border-radius: 10px;
+        border-color: darkgray;
+        background-color: white;
+        align-items: space-between;
+   
+}
+
+.movie_small_img{
+    display: block;
+    width: 150px;
+    border:none;
+    cursor: pointer;
+    offset: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.movie_small_img:hover {
+    box-shadow: none;
+}
+
