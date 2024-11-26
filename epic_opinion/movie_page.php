@@ -59,7 +59,7 @@ $genre_list_string = '';
     <div class="review_header">
 
         <div>
-            <h2 >REVIEW</h2>    
+            <h2>REVIEW</h2>    
         </div>
 
         <div>
@@ -72,7 +72,7 @@ $genre_list_string = '';
             echo '<div id="popup1" class="overlay">';
             echo '<div class="popup">';
             echo '<a class="close" href="#">&times;</a>';
-            echo '<h3>Write Your Review</h3>';
+            echo '<h3 class="text_black">Write Your Review</h3>';
             echo '<form method="post" action="#">';
             echo '<input class="comment_submit_btn" type="number" name="rating" min="0" max="10" value="0">';
             echo '<textarea class="textarea_review" name="review" id="" placeholder="Comment..."></textarea>';
