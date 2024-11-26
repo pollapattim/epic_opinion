@@ -118,7 +118,7 @@ $genre_list_string = '';
         }
 
     }
-    echo '<div class="review_content">';
+    echo '<div class="main_box">';
     get_movie_review($movie_id, $conn);
     echo '</div>';
     mysqli_close($conn);

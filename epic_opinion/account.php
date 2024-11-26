@@ -26,10 +26,7 @@ $user_id = $_SESSION["user_id"];
 
 
 
-<body class="main_box ">
-    
-    
-</body>
+
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -69,9 +66,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 }   
 
-    echo '<div class="view_movie">';
+    
     get_review_account_page($user_id, $conn);
-    echo '</div>';
+    
     mysqli_close($conn); 
     
 ?>

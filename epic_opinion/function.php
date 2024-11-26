@@ -92,7 +92,7 @@ function get_movie_review($movie_id, $conn) {
   $find_movie_review = "SELECT * FROM reviews where movie_id = $movie_id";
 
   $review_result = mysqli_query($conn, $find_movie_review);
-
+  echo '<div class="admin_col">';
   while ($review_list = mysqli_fetch_assoc($review_result)) {
     echo '<div class="review_content">';
 
@@ -123,7 +123,7 @@ function get_movie_review($movie_id, $conn) {
     echo '</div>';
     echo '</div>';
   }
- 
+  echo '</div>';
 }
 
 function get_review_account_page($user_id, $conn) {
@@ -132,7 +132,7 @@ function get_review_account_page($user_id, $conn) {
 
     $review_result = mysqli_query($conn, $user_reviews);
     
-    echo '<div class="admin_col">';
+    
     while ($review_list = mysqli_fetch_assoc($review_result)) {
         $movie_id = $review_list["movie_id"];
         $find_poster = "SELECT poster_url FROM movies where movie_id = $movie_id";
@@ -140,7 +140,7 @@ function get_review_account_page($user_id, $conn) {
         $poster_url_array = mysqli_fetch_assoc($result);
         $poster_url =  $poster_url_array["poster_url"];
         $review_string = nl2br($review_list["review"]);
-
+        echo '<div class="item_col">';
        
         echo '<div class="review_content">';
         echo '<form action="movie_page.php" method="GET">'; 
@@ -173,8 +173,6 @@ function get_review_account_page($user_id, $conn) {
 
         
 
-       
-
             echo '<div>';
             echo '<div>';
             echo '<form action="#popup1" method="post">';
@@ -199,7 +197,7 @@ function get_review_account_page($user_id, $conn) {
             echo '</div>';
             echo '</div>';
             echo '</div>';
-            
+
             echo '<div>';
             echo '<form action="account.php" method="post">';
             echo " <button type='submit' name='delete_review' value='";
@@ -213,7 +211,7 @@ function get_review_account_page($user_id, $conn) {
           echo '</div>';
           echo '</div>';
     }
-    echo '</div>';
+    
 }
 
 function admin_get_users($conn) {
