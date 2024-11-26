@@ -160,7 +160,10 @@ body {
 .right_corner {
     justify-content: end;
 }
+.below_header {
 
+    margin-top: 160px;
+}
 .admin_movie_option {
     display: flex;
     flex-direction: row;

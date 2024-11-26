@@ -133,6 +133,7 @@ function get_review_account_page($user_id, $conn) {
     $review_result = mysqli_query($conn, $user_reviews);
     
     
+    echo '<div class="below_header">';
     while ($review_list = mysqli_fetch_assoc($review_result)) {
         $movie_id = $review_list["movie_id"];
         $find_poster = "SELECT poster_url FROM movies where movie_id = $movie_id";
@@ -211,7 +212,7 @@ function get_review_account_page($user_id, $conn) {
           echo '</div>';
           echo '</div>';
     }
-    
+    echo '</div>';
 }
 
 function admin_get_users($conn) {
