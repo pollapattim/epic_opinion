@@ -89,7 +89,7 @@ function get_movie_info($movie_id) {
 
 function get_movie_review($movie_id, $conn) {
 
-  $find_movie_review = "SELECT * FROM reviews where movie_id = $movie_id";
+  $find_movie_review = "SELECT * FROM reviews  WHERE movie_id = $movie_id ORDER BY date DESC";
 
   $review_result = mysqli_query($conn, $find_movie_review);
   echo '<div class="admin_col">';
@@ -128,7 +128,7 @@ function get_movie_review($movie_id, $conn) {
 
 function get_review_account_page($user_id, $conn) {
 
-  $user_reviews = "SELECT * FROM reviews where user_id = $user_id";
+  $user_reviews = "SELECT * FROM reviews WHERE user_id = $user_id ORDER BY date DESC";
 
     $review_result = mysqli_query($conn, $user_reviews);
     
@@ -323,7 +323,7 @@ function admin_get_reviews($conn, $movie_id) {
   
 
 
-  $find_movie_review = "SELECT * FROM reviews where movie_id = $movie_id";
+  $find_movie_review = "SELECT * FROM reviews WHERE movie_id = $movie_id ORDER BY date DESC";
   $review_result = mysqli_query($conn, $find_movie_review);
   
 
