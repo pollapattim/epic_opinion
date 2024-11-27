@@ -43,9 +43,8 @@ $genre_list_string = '';
                 <div class="discription">
                     <h4> <?php 
                             foreach ($movie->genres as $genre) {
-            
+
                                 array_push($movie_genre_list, $genre->name);
-                                
                             }
 
                             $genre_list_string = implode(", ", $movie_genre_list);
@@ -57,11 +56,9 @@ $genre_list_string = '';
             </div>
     </div>
     <div class="review_header">
-
         <div>
             <h2>REVIEW</h2>    
         </div>
-
         <div>
             <?php if (!empty($_SESSION["user_id"])) {?>
                 <a class="button" href="#popup1">Add Comment</a>
@@ -80,10 +77,8 @@ $genre_list_string = '';
             echo '</form>';
             echo '</div>';
             echo '</div>';
-            
             ?>
     </div>
-
 </body>
 
 <?php
@@ -93,14 +88,12 @@ $genre_list_string = '';
         $rating = $_POST["rating"];
         $user_id = $_SESSION["user_id"];
 
-
         $sql = "INSERT INTO reviews (movie_id, user_id, rating, review) VALUES ($movie_id, $user_id, $rating, '$review')";
         try {
             mysqli_query($conn, $sql);
-           
         }
         catch (mysqli_sql_exception) {
-            
+            echo '<script>alert("Please to go your Account to edit")</script>';
         }
         
         $title = addslashes($movie->title);
@@ -108,15 +101,9 @@ $genre_list_string = '';
 
         $sql = "INSERT INTO movies (movie_id, title, poster_url, genre, overview) VALUES ($movie_id, '$title', '$poster_url', '$genre_list_string', '$overview')";
         try {
-    
-            mysqli_query($conn, $sql);
-              
-            
+            mysqli_query($conn, $sql); 
         }
-        catch (mysqli_sql_exception) {
-            
-        }
-
+        catch (mysqli_sql_exception) {}
     }
     echo '<div class="main_box">';
     get_movie_review($movie_id, $conn);

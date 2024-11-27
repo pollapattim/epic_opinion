@@ -75,6 +75,9 @@ if(isset($_POST['admin_delete_user'])) {
     $user_id = (int)$_POST['admin_delete_user'];
     $sql = "DELETE FROM users WHERE id = $user_id;";
     mysqli_query($conn, $sql);
+
+    $sql = "DELETE FROM reviews WHERE user_id = $user_id;";
+    mysqli_query($conn, $sql);
     $_SESSION["admin_user"] = TRUE;
 } 
 
@@ -96,21 +99,18 @@ if (isset($_POST['admin_movies'])) {
 
 
 echo '<div class="view_movie">';
-if ($_SESSION["admin_user"] == TRUE) {
-    
-    admin_get_users($conn);
-} 
-
-else {
-    
-
-    if (empty($_SESSION["admin_reviews"])) {
-        admin_get_movies($conn);
-    
-    } else {
-        admin_get_reviews($conn,  $_SESSION["admin_reviews"]);
+    if ($_SESSION["admin_user"] == TRUE) {
+        
+        admin_get_users($conn);
+    } 
+    else {
+        if (empty($_SESSION["admin_reviews"])) {
+            admin_get_movies($conn);
+        
+        } else {
+            admin_get_reviews($conn,  $_SESSION["admin_reviews"]);
+        }
     }
-}
 echo '</div>';
 
 mysqli_close($conn); 

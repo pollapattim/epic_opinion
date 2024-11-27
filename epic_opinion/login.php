@@ -15,7 +15,7 @@
 <body>
         <div class="login-page">
             <div class="form">
-
+                
                 <a href="index.php"><img class="logo" src="img/2.png"></a> 
 
                 <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post" class="login-form">
@@ -59,19 +59,13 @@
                     
                     session_start();
                     header("Location: index.php");
-                 
                 }
                 else {
-
-                    echo"Password is incorrect";
-
+                    echo '<script>alert("Password is incorrect")</script>';
                 } 
             }
             else {
-               
-                echo "<p class='message'>This username is not registered</p>";
-                
-
+                echo '<script>alert("This username is not registered")</script>';
             }
         }
     }

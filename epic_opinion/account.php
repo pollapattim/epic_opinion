@@ -43,8 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['edit_button'])){ 
         $_SESSION["movie_id"] = (int)$_POST['edit_button'];
     } 
-
- 
+    
     if (isset($_POST['update_review'])){    
         
         $sel_movie_id = $_SESSION["movie_id"];
@@ -56,19 +55,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 WHERE movie_id = $sel_movie_id AND user_id = $user_id;";
         try {
             mysqli_query($conn, $sql);
-        
         }
-        catch (mysqli_sql_exception) {
-            
-        }
-        
+        catch (mysqli_sql_exception) {}
     }
 
 }   
-
-    
     get_review_account_page($user_id, $conn);
-    
     mysqli_close($conn); 
-    
 ?>

@@ -43,11 +43,10 @@
             $sql = "INSERT INTO users (user, password) VALUES ('$username', '$hash')";
             try {
                 mysqli_query($conn, $sql);
-                echo "You are now resgistered!";
                 header("Location: login.php");
             }
             catch (mysqli_sql_exception) {
-                echo "That username is already taken";
+                echo '<script>alert("That username is already taken")</script>';
             }
         }
     }
