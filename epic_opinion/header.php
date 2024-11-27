@@ -24,7 +24,7 @@
                 <?php if (!empty($_SESSION["user_id"]) && $_SESSION["admin"] == 1) {?>
                     <a href="admin.php">Admin</a>
                 <?php }?>
-                <form action="" method="post">
+                <form action="index.php" method="post">
                     <button class="dropdown_btn" type="submit" name="popular">Popular</button>
                 </form>
             </div>
