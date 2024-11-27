@@ -405,6 +405,4 @@ function print_page_title($title) {
   echo '</div>';
 }
 
-function popular_onclick() {
-  $_SESSION["search"] = NULL; 
-}
+
