@@ -161,8 +161,9 @@ body {
     justify-content: end;
 }
 .below_header {
-
-    margin-top: 160px;
+    margin-top: 85px;
+    width:  85%;
+    margin-left: 5%;
 }
 .admin_movie_option {
     display: flex;
@@ -196,15 +197,24 @@ body {
     opacity: 60%;
 }
 
-.adim_top_page {
+.admin_top_page {
     display: flex;
     flex-direction: row;
     margin-left: 40px;
 }
 
-.input .adim_top_page {
+.input .admin_top_page {
     border: solid;
     border-color: darkgray;
     border-radius: 5px;
     margin-left: 30px;
+}
+
+.page_title {
+    color: white;
+    font-size: 40px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 5px solid white;
 }

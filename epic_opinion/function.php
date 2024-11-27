@@ -44,7 +44,7 @@ function get_movie_list($search) {
 
 }
 
-function get_movie_info($movie_id) {
+function get_movie_id($movie_id) {
 
     $curl = curl_init();
     
@@ -65,26 +65,54 @@ function get_movie_info($movie_id) {
     $response = curl_exec($curl);
     $err = curl_error($curl);
     
-    
-
     curl_close($curl);
-    //$response = json_decode($response);
-    //echo $response;
-    
-   //$response = $response["belongs_to_collection"];
+ 
     $response = json_decode($response);
-    /*
-    echo '<pre>';
-    print_r($response);
-    echo '</pre>';
-    */
-    
+
     if ($err) {
       echo "cURL Error #:" . $err;
     } else {        
        return $response;
     }
 
+}
+
+function popular_movies() {
+ 
+  $curl = curl_init();
+  
+  curl_setopt_array($curl, [
+    CURLOPT_URL => "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc",
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => "",
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 30,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => "GET",
+    CURLOPT_HTTPHEADER => [
+      "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyOWVmOGUzMDZhNmZhYzcwOTI4MzE5MmRmN2Y1YmJkMSIsIm5iZiI6MTczMjcxMjg4Ni4xNTExOTY1LCJzdWIiOiI2NmQ4NmQ4Mzc3OWUxZmYxOTJiZjUyMjIiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.RI2NfVg2Qgnl3r_l33CPjpROqlW92vMeJ94oYRLFVgg",
+      "accept: application/json"
+    ],
+  ]);
+  
+  $response = curl_exec($curl);
+  $err = curl_error($curl);
+  
+  curl_close($curl);
+
+  if ($err) {
+    echo "cURL Error #:" . $err;
+  } else {
+      $response = json_decode($response);
+      $movie_list = array();
+
+      foreach ($response->results as $result) {
+          $movie_info = array("id" => "$result->id", "title" => "$result->title", "poster_path" => "$result->poster_path", "overview" => "$result->overview");
+          array_push($movie_list, $movie_info);
+      }
+      
+        return $movie_list;
+  }
 }
 
 function get_movie_review($movie_id, $conn) {
@@ -316,14 +344,9 @@ function admin_get_reviews($conn, $movie_id) {
   $result = mysqli_query($conn, $sql);
   $movie_info = mysqli_fetch_assoc($result);
   $title = $movie_info["title"];
-  echo '<div>';
-  echo '<p class="admin_movie_title">';
-  echo $title;
-  echo '</p>';
-  echo '</div>';
+
+  print_page_title($title);
   
-
-
   $find_movie_review = "SELECT * FROM reviews WHERE movie_id = $movie_id ORDER BY date DESC";
   $review_result = mysqli_query($conn, $find_movie_review);
   
@@ -374,4 +397,14 @@ function movie_review_print($review_list) {
     
 }
 
+function print_page_title($title) {
+  echo '<div>';
+  echo '<p class="page_title">';
+  echo $title;
+  echo '</p>';
+  echo '</div>';
+}
 
+function popular_onclick() {
+  $_SESSION["search"] = NULL; 
+}

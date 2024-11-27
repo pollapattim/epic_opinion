@@ -18,13 +18,17 @@
             
         <a class="header_button" href="index.php">Home</a></li>
         <div class="dropdown">
-        <?php if (!empty($_SESSION["user_id"]) && $_SESSION["admin"] == 1) {?>
-        <button class="header_button">Admin</button>
+        
+        <button class="header_button">Menu</button>
             <div class="dropdown-content">
+                <?php if (!empty($_SESSION["user_id"]) && $_SESSION["admin"] == 1) {?>
                     <a href="admin.php">Admin</a>
-                <a href="#">Page</a>
+                <?php }?>
+                <form action="" method="post">
+                    <button class="dropdown_btn" type="submit" name="popular">Popular</button>
+                </form>
             </div>
-        <?php }?>
+   
         </div>
                 
     </div>
@@ -58,6 +62,3 @@
             <?php } ?>
         </div>
     </nav> 
-    
-
-

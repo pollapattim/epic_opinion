@@ -65,12 +65,27 @@
   color: black;
   padding: 12px 16px;
   text-decoration: none;
+  text-align: center;
   display: block;
+  cursor: pointer;
 }
 
 .dropdown-content a:hover {background-color: #ddd;}
 
 .dropdown:hover .dropdown-content {display: block;}
+
+.dropdown_btn {
+  color: black;
+  display: block;
+  min-width: 100px;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.dropdown_btn:hover {background-color: #ddd;}
 
 .custom-select{
   

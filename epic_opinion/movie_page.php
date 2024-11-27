@@ -6,7 +6,7 @@ include("function.php");
 include("database.php");
 
 $movie_id = $_GET["movie_id"];
-$movie = get_movie_info($movie_id);
+$movie = get_movie_id($movie_id);
 $movie_genre_list = [];
 $genre_list_string = '';
 
